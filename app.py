@@ -23,9 +23,6 @@ def predict():
 	cv = CountVectorizer(max_features = 3000)
 	X = cv.fit_transform(X) # Fit the Data
 
-	from sklearn.model_selection import train_test_split
-	X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state = 101)
-
 	#Usage of Saved Model
 	NB_spam_model = open('NB_spam_model.pkl','rb')
 	clf = joblib.load(NB_spam_model)
